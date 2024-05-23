@@ -24,11 +24,11 @@ gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 blurred = cv2.GaussianBlur(gray, (5,5,), 0) #reduces noise
 edged = cv2.Canny(blurred, 50, 200)
 
-# #if debug, show output of edge detection
-# if args["debug"] > 0:
-# 	cv2.imshow("Input", image)
-# 	cv2.imshow("Edged", edged)
-# 	cv2.waitKey(0)
+#if debug, show output of edge detection
+if args["debug"] > 0:
+	cv2.imshow("Input", image)
+	cv2.imshow("Edged", edged)
+	cv2.waitKey(0)
 	
 #find contours in edge map and sort them by size in descending order
 contours = cv2.findContours(edged.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
