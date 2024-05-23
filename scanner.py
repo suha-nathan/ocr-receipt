@@ -60,6 +60,9 @@ class ReceiptScanner:
             print("Please select 4 points.")
             return
 
+        # need to add editing of 4 point selection here. 
+        # Process button needs to be pressed before proceeding with 4 point transform
+        
         pts = np.array(self.points, dtype="float32")
         receipt = four_point_transform(self.image, pts)
         self.display_image(receipt)
